@@ -25,41 +25,50 @@ public class Main {
     }
 
     private void initializeBoard() {
+        board = new Board(BOARD_SIZE);
+        board.addLadder(10, 25);
+        board.addLadder(16, 33);
+        board.addLadder(30, 55);
+
+
+        board.addSnake(17, 7);
+        board.addSnake(54, 34);
+        board.addSnake(62, 19);
 
     }
 
     private void initializePlayers() {
 
 
-    private void initializeGame() {
+        private void initializeGame() {
 
-    }
+        }
 
-    private void createInterface() {
+        private void createInterface() {
 
-        JPanel controlPanel = new JPanel();
-        controlPanel.add(diceValueLabel);
-        controlPanel.add(rollDiceButton);
-        controlPanel.add(resetButton);
+            JPanel controlPanel = new JPanel();
+            controlPanel.add(diceValueLabel);
+            controlPanel.add(rollDiceButton);
+            controlPanel.add(resetButton);
 
-        frame.getContentPane().add(boardPanel, BorderLayout.CENTER);
-        frame.getContentPane().add(infoPanel, BorderLayout.WEST);
-        frame.getContentPane().add(controlPanel, BorderLayout.SOUTH);
-        frame.setSize(500, 500);
-        frame.setVisible(true);
-    }
+            frame.getContentPane().add(boardPanel, BorderLayout.CENTER);
+            frame.getContentPane().add(infoPanel, BorderLayout.WEST);
+            frame.getContentPane().add(controlPanel, BorderLayout.SOUTH);
+            frame.setSize(500, 500);
+            frame.setVisible(true);
+        }
 
-    private void updatePlayerPositions() {
+        private void updatePlayerPositions() {
 
-    }
+        }
 
-    private void resetGame() {
+        private void resetGame() {
 
-    }
+        }
 
-    public static void main(String[] args) {
+        public static void main(String[] args) {
 
-            }
-        });
-    }
+        }
+    });
+}
 }
