@@ -17,16 +17,7 @@ public class Main {
     private Player[] players;
     private Game game;
 
-    class Game {
-        private Board board;
-        private Player[] players;
-        private int currentPlayerIndex;
 
-        public Game(Board board, Player[] players) {
-            this.board = board;
-            this.players = players;
-            this.currentPlayerIndex = 0;
-        }
 
 
         public Main() {
@@ -103,6 +94,18 @@ public class Main {
                 }
             });
         }
+
+    class Game {
+        private Board board;
+        private Player[] players;
+        private int currentPlayerIndex;
+
+        public Game(Board board, Player[] players) {
+            this.board = board;
+            this.players = players;
+            this.currentPlayerIndex = 0;
+        }
+
     public void play() {
         Player currentPlayer = players[currentPlayerIndex];
         int diceRoll = rollDice();
