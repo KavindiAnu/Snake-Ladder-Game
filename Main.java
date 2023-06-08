@@ -38,10 +38,12 @@ public class Main {
     }
 
     private void initializePlayers() {
-
-
+        players = new Player[2];
+        players[0] = new Player("Player 1");
+        players[1] = new Player("Player 2");
+    }
         private void initializeGame() {
-
+            game = new Game(board, players);
         }
 
         private void createInterface() {
