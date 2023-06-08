@@ -17,7 +17,19 @@ public class Main {
     private Player[] players;
     private Game game;
 
-    public Main() {
+    class Game {
+        private Board board;
+        private Player[] players;
+        private int currentPlayerIndex;
+
+        public Game(Board board, Player[] players) {
+            this.board = board;
+            this.players = players;
+            this.currentPlayerIndex = 0;
+        }
+
+
+        public Main() {
         initializeBoard();
         initializePlayers();
         initializeGame();
