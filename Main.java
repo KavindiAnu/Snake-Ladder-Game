@@ -60,17 +60,37 @@ public class Main {
             frame.getContentPane().add(controlPanel, BorderLayout.SOUTH);
             frame.setSize(500, 500);
             frame.setVisible(true);
-        }
 
 
-        resetButton = new JButton("Reset");
-            resetButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                resetGame();
+            JPanel infoPanel = new JPanel(new GridLayout(2, 1));
+            playerLabels = new JLabel[players.length];
+            for (int i = 0; i < players.length; i++) {
+                JLabel playerLabel = new JLabel(players[i].getName() + ": 0");
+                playerLabels[i] = playerLabel;
+                infoPanel.add(playerLabel);
             }
-        });
 
+            diceValueLabel = new JLabel("Dice Value: ");
+            rollDiceButton = new JButton("Roll Dice");
+            rollDiceButton.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    int diceRoll = game.rollDice();
+                    diceValueLabel.setText("Dice Value: " + diceRoll);
+                    game.play();
+                    updatePlayerPositions();
+                }
+            });
+
+
+            resetButton = new JButton("Reset");
+            resetButton.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    resetGame();
+                }
+            });
+        }
 
 
 
