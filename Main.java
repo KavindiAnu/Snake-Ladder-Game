@@ -63,6 +63,13 @@ public class Main {
         }
 
         private void updatePlayerPositions() {
+            for (int i = 0; i < players.length; i++) {
+                Player player = players[i];
+                int position = player.getPosition();
+                cells[position - 1].setText(player.getName());
+                playerLabels[i].setText(player.getName() + ": " + position);
+            }
+
 
         }
 
