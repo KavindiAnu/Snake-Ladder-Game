@@ -29,11 +29,13 @@ public class Main {
         board.addLadder(10, 25);
         board.addLadder(16, 33);
         board.addLadder(30, 55);
+        board.addLadder(45,70);
 
 
         board.addSnake(17, 7);
         board.addSnake(54, 34);
         board.addSnake(62, 19);
+        board.addSnake(88,61);
 
     }
 
