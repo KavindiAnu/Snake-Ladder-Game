@@ -91,6 +91,36 @@ public class Main {
                 }
             });
         }
+    public void play() {
+        Player currentPlayer = players[currentPlayerIndex];
+        int diceRoll = rollDice();
+
+        System.out.println(currentPlayer.getName() + " rolls the dice and gets: " + diceRoll);
+        int newPosition = currentPlayer.getPosition() + diceRoll;
+
+        if (newPosition > board.getSize()) {
+            System.out.println(currentPlayer.getName() + " cannot move. Try again in the next turn.");
+            return;
+        }
+
+        int finalPosition = board.getNewPosition(newPosition);
+        currentPlayer.setPosition(finalPosition);
+
+        System.out.println(currentPlayer.getName() + " moves to position: " + finalPosition);
+
+        if (finalPosition == board.getSize()) {
+            System.out.println(currentPlayer.getName() + " wins the game!");
+            return;
+        }
+
+        currentPlayerIndex = (currentPlayerIndex + 1) % players.length;
+    }
+
+    int rollDice() {
+        Random random = new Random();
+        return random.nextInt(6) + 1;
+    }
+}
 
 
 
