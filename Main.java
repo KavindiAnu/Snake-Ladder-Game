@@ -62,7 +62,19 @@ public class Main {
             frame.setVisible(true);
         }
 
-        private void updatePlayerPositions() {
+
+        resetButton = new JButton("Reset");
+            resetButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                resetGame();
+            }
+        });
+
+
+
+
+    private void updatePlayerPositions() {
             for (int i = 0; i < players.length; i++) {
                 Player player = players[i];
                 int position = player.getPosition();
