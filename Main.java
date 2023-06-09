@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 import java.util.Random;
 
 
-public int getNewPosition(int currentPosition) {
+    public int getNewPosition(int currentPosition) {
         int newPosition = currentPosition;
 
         if (ladderPositions.containsKey(currentPosition))
@@ -16,11 +16,11 @@ public int getNewPosition(int currentPosition) {
         return newPosition;
         }
 
-public Map<Integer, Integer> getLadderPositions() {
+     public Map<Integer, Integer> getLadderPositions() {
         return ladderPositions;
         }
 
-public Map<Integer, Integer> getSnakePositions() {
+     public Map<Integer, Integer> getSnakePositions() {
         return snakePositions;
         }
         }
