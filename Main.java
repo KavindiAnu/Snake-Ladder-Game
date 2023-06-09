@@ -4,6 +4,30 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Random;
 
+class Board {
+      private int size;
+      private Map<Integer, Integer> ladderPositions;
+      private Map<Integer, Integer> snakePositions;
+
+      public Board(int size) {
+        this.size = size;
+        this.ladderPositions = new HashMap<>();
+        this.snakePositions = new HashMap<>();
+    }
+
+      public int getSize() {
+        return size;
+    }
+
+      public void addLadder(int start, int end) {
+        ladderPositions.put(start, end);
+    }
+
+      public void addSnake(int start, int end) {
+        snakePositions.put(start, end);
+    }
+
+
 
     public int getNewPosition(int currentPosition) {
          int newPosition = currentPosition;
