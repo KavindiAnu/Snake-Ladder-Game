@@ -5,6 +5,27 @@ import java.awt.event.ActionListener;
 import java.util.Random;
 
 
+public int getNewPosition(int currentPosition) {
+        int newPosition = currentPosition;
+
+        if (ladderPositions.containsKey(currentPosition))
+        newPosition = ladderPositions.get(currentPosition);
+        else if (snakePositions.containsKey(currentPosition))
+        newPosition = snakePositions.get(currentPosition);
+
+        return newPosition;
+        }
+
+public Map<Integer, Integer> getLadderPositions() {
+        return ladderPositions;
+        }
+
+public Map<Integer, Integer> getSnakePositions() {
+        return snakePositions;
+        }
+        }
+
+
 class Game {
     private Board board;
     private Player[] players;
