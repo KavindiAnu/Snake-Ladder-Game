@@ -165,6 +165,21 @@ public class Main {
 
     private void createInterface() {
 
+        frame = new JFrame("Snake and Ladder");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        boardPanel = new JPanel(new GridLayout(10, 10));
+        cells = new JLabel[BOARD_SIZE];
+
+        for (int i = 0; i < BOARD_SIZE; i++) {
+            JLabel cell = new JLabel(Integer.toString(i + 1));
+            cell.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+            cell.setHorizontalAlignment(SwingConstants.CENTER);
+            cells[i] = cell;
+            boardPanel.add(cell);
+        }
+
+
         JPanel infoPanel = new JPanel(new GridLayout(2, 1));
         playerLabels = new JLabel[players.length];
         for (int i = 0; i < players.length; i++) {
