@@ -8,6 +8,7 @@ import java.util.Map;
 
 class Board {
       private int size;
+
       private Map<Integer, Integer> ladderPositions;
       private Map<Integer, Integer> snakePositions;
 
