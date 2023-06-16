@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 import java.util.Random;
 import java.util.HashMap;
 import java.util.Map;
+import javax.swing.JOptionPane;
 
 class Board {
       private int size;
@@ -68,11 +69,12 @@ class Game {
         Player currentPlayer = players[currentPlayerIndex];
         int diceRoll = rollDice();
 
-        System.out.println(currentPlayer.getName() + " rolls the dice and gets: " + diceRoll);
-        int newPosition = currentPlayer.getPosition() + diceRoll;
+        JOptionPane.showMessageDialog(null, currentPlayer.getName() + " rolls the dice and gets: " + diceRoll);
+        
+	int newPosition = currentPlayer.getPosition() + diceRoll;
 
         if (newPosition > board.getSize()) {
-            System.out.println(currentPlayer.getName() + " cannot move. Try again in the next turn.");
+            JOptionPane.showMessageDialog(null, currentPlayer.getName() + " cannot move. Try again in the next turn.");
             return;
         }
 
@@ -82,7 +84,7 @@ class Game {
         System.out.println(currentPlayer.getName() + " moves to position: " + finalPosition);
 
         if (finalPosition == board.getSize()) {
-            System.out.println(currentPlayer.getName() + " wins the game!");
+            JOptionPane.showMessageDialog(null, currentPlayer.getName() + " wins the game!");
             return;
         }
 
@@ -145,6 +147,9 @@ public class Main {
         board.addLadder(16, 33);
         board.addLadder(30, 55);
         board.addLadder(45,70);
+	board.addLadder(5,70);
+	board.addLadder(7,85);
+	board.addLadder(9,90);
 
 
         board.addSnake(17, 7);
